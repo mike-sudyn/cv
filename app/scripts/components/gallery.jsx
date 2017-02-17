@@ -58,13 +58,14 @@ class Gallery extends React.Component {
                     <div className="gallery__body">
                         {gallery.projects && gallery.projects.map((project, i) =>
                             <div className={gallery.active === i ? 'gallery__item gallery__item--active' : 'gallery__item'} key = {i}>
-                                <div className="gallery__item__image p3d" style={{backgroundImage: 'url(' + project.image + ')'}}></div>
+                                <div className="gallery__item__image p3d" style={{backgroundImage: 'url(' + project.image + ')'}}>
+                                    <div className="gallery__loader"></div>
+                                </div>
                                 <p className="gallery__item__title">{project.title}</p>
                                 <p className="gallery__item__body">{project.text}</p>
                             </div>
                         )}
                     </div>
-                    <div className="gallery__loader"></div>
                     <button onClick={()=>dispatch(galleryPrev())} className="gallery__button gallery__button--left p3d">&#10092;</button>
                     <button onClick={()=>dispatch(galleryNext())} className="gallery__button gallery__button--right p3d">&#10093;</button>
                 </div>
