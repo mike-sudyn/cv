@@ -1,0 +1,17 @@
+html {
+    font-size: $base-font-size;
+}
+
+html, body {
+    color: $font-color-primary;
+    font-family: $font-family-primary;
+}
+
+body {
+    background: $bg-color-primary;
+}
+
+::selection {
+    color: $color-black;
+    background-color: $color-white;
+}
