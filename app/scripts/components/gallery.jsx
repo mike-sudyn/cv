@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import Perspective from './perspective';
 import { galleryPlay, galleryStop, galleryPrev, galleryNext } from '../actions/actions';
 
 class Gallery extends React.Component {
@@ -53,7 +52,7 @@ class Gallery extends React.Component {
 
         return (
             <div className={gallery.loader ? 'gallery block gallery--loader' : 'gallery block'}>
-                <div onMouseMove={Perspective.do} onMouseLeave={(e)=>{this.startLoader(); Perspective.stop(e);}} onMouseEnter={this.stopLoader} className="gallery__inner block__inner p3d">
+                <div onMouseLeave={this.startLoader} onMouseEnter={this.stopLoader} className="gallery__inner block__inner">
                     <h1>Portfolio</h1>
                     <div className="gallery__body">
                         {gallery.projects && gallery.projects.map((project, i) =>
@@ -66,8 +65,8 @@ class Gallery extends React.Component {
                             </div>
                         )}
                     </div>
-                    <button onClick={()=>dispatch(galleryPrev())} className="gallery__button gallery__button--left p3d">&#10092;</button>
-                    <button onClick={()=>dispatch(galleryNext())} className="gallery__button gallery__button--right p3d">&#10093;</button>
+                    <button onClick={()=>dispatch(galleryPrev())} className="gallery__button gallery__button--left">&#10092;</button>
+                    <button onClick={()=>dispatch(galleryNext())} className="gallery__button gallery__button--right">&#10093;</button>
                 </div>
             </div>
         );
