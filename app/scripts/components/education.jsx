@@ -11,9 +11,9 @@ class Education extends React.Component {
                     <p>Department of Electronic Publishing</p>
                     <br/>
                     <h3>Languages</h3>
+                    <p>English - upper intermediate</p>
+                    <p>Russian - advanced</p>
                     <p>Ukrainian - native</p>
-                    <p>English - intermediate</p>
-                    <p>Russian - upper intermediate</p>
                 </div>
             </div>
         );

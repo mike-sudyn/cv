@@ -94,7 +94,7 @@ gulp.task('scripts:prod', () => {
             gutil.log(err.message);
             this.emit('end');
         })
-        .pipe($.uglify())
+        //.pipe($.uglify())
         .pipe(source('bundle.js'))
         .pipe(gulp.dest('dist/scripts'));
 });
